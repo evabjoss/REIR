@@ -2,6 +2,7 @@ package S2;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 /*************************************************************************
  *  Compilation:  javac PointPlotter.java
@@ -31,6 +32,7 @@ public class PointPlotter {
             int x = in.readInt();
             int y = in.readInt();
             Point p = new Point(x, y);
+            System.out.println(p);
             p.draw();
         }
 

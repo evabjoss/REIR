@@ -3,6 +3,7 @@ package S2;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Out;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
 
@@ -60,16 +61,20 @@ public class Point implements Comparable<Point> {
     }
 
     public static void main(String[] args) {
+
+        // TODO: CHANGE BACK!
         /*
          * Do not modify
          */
-        In in = new In();
+        String filename = args[0];
+        In in = new In(filename);
         Out out = new Out();
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
             points[i] = new Point(x, y);
+            //StdOut.println(points[i]);
         }
         out.printf("Testing slopeTo method...\n");
         for (int i = 1; i < points.length; i++) {
