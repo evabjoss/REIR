@@ -7,6 +7,8 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
 
+import static edu.princeton.cs.algs4.StdOut.print;
+
 /*************************************************************************
  * Compilation: javac Point.java Execution: Dependencies: StdDraw.java
  *
@@ -41,8 +43,11 @@ public class Point implements Comparable<Point> {
 
     // slope between this point and that point
     public double slopeTo(Point that) {
-        // TODO: Implement this
-        return 0;
+        double output = ((that.y - this.y) / (that.x - this.x));
+        if(output < 0) return 0.0;
+        else if(output == 1.0) return Double.POSITIVE_INFINITY;
+        else if(output == 0.0) return Double.NEGATIVE_INFINITY;
+        else return output;
     }
 
     /**
@@ -50,7 +55,12 @@ public class Point implements Comparable<Point> {
      * y-coordinates and breaking ties by x-coordinates
      */
     public int compareTo(Point that) {
-        // TODO: Implement this
+        if (this.y < that.y) return -1;
+        if (this.y > that.y) return +1;
+        else{
+            if (this.x < that.x) return -1;
+            if (this.x > that.x) return +1;
+        }
         return 0;
     }
 
@@ -74,7 +84,7 @@ public class Point implements Comparable<Point> {
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
             points[i] = new Point(x, y);
-            //StdOut.println(points[i]);
+            StdOut.println(points[i]);
         }
         out.printf("Testing slopeTo method...\n");
         for (int i = 1; i < points.length; i++) {
