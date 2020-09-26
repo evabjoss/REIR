@@ -33,6 +33,7 @@ public class Point implements Comparable<Point> {
         }
     }
 
+
     // create the point (x, y)
     public Point(int x, int y) {
         this.x = x;
