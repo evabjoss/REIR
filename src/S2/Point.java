@@ -21,7 +21,17 @@ public class Point implements Comparable<Point> {
     public final int x, y;
 
     // compare points by slope
-    public final Comparator<Point> SLOPE_ORDER = null;
+    public final Comparator<Point> SLOPE_ORDER = new SlopeOrder();
+
+    private class SlopeOrder implements Comparator<Point> {
+        public int compare(Point point1, Point point2) {
+            double line1 = point1.slopeTo(Point.this);
+            double line2 = point2.slopeTo(Point.this);
+            if ((line1 - line2) > 0) return 1;
+            else if ((line1 - line2) < 0) return -1;
+            else return 0;
+        }
+    }
 
     // create the point (x, y)
     public Point(int x, int y) {
@@ -101,4 +111,5 @@ public class Point implements Comparable<Point> {
                     points[i - 2]));
         }
     }
+
 }
