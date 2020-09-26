@@ -43,11 +43,12 @@ public class Point implements Comparable<Point> {
 
     // slope between this point and that point
     public double slopeTo(Point that) {
-        double output = ((that.y - this.y) / (that.x - this.x));
-        if(output < 0) return 0.0;
-        else if(output == 1.0) return Double.POSITIVE_INFINITY;
-        else if(output == 0.0) return Double.NEGATIVE_INFINITY;
-        else return output;
+        float diff_x = that.x - this.x;
+        float diff_y = that.y - this.y;
+        if ((diff_y == 0) && (diff_x == 0)) return Double.NEGATIVE_INFINITY;
+        if(diff_y == 0.0) return 0.0;
+        if((diff_x) == 0.0) return Double.POSITIVE_INFINITY;
+        else return (diff_y/diff_x);
     }
 
     /**
