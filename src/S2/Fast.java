@@ -1,13 +1,11 @@
 package S2;
 
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.Out;
-import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.*;
 
 import javax.naming.PartialResultException;
 import java.util.Arrays;
 import java.util.Collections;
+import edu.princeton.cs.algs4.Stopwatch;
 
 public class Fast {
 
@@ -89,7 +87,9 @@ public class Fast {
             points[i] = new Point(x, y);*/
 
         }
+        Stopwatch time = new Stopwatch();
         Fast.findPoints(points, n);
+        StdOut.println("Time: " + time.elapsedTime());
 
     }
 
