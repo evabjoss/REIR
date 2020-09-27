@@ -54,8 +54,8 @@ public class Point implements Comparable<Point> {
 
     // slope between this point and that point
     public double slopeTo(Point that) {
-        float diff_x = that.x - this.x;
-        float diff_y = that.y - this.y;
+        double diff_x = that.x - this.x;
+        double diff_y = that.y - this.y;
         if ((diff_y == 0) && (diff_x == 0)) return Double.NEGATIVE_INFINITY;
         if(diff_y == 0.0) return 0.0;
         if((diff_x) == 0.0) return Double.POSITIVE_INFINITY;
@@ -88,6 +88,15 @@ public class Point implements Comparable<Point> {
         /*
          * Do not modify
          */
+
+        /*In in = new In();
+        Out out = new Out();
+        int n = in.readInt();
+        Point[] points = new Point[n];
+        for (int i = 0; i < n; i++) {
+            int x = in.readInt(), y = in.readInt();
+            points[i] = new Point(x, y);*/
+
         String filename = args[0];
         In in = new In(filename);
         Out out = new Out();
