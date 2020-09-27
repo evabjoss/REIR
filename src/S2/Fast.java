@@ -70,20 +70,20 @@ public class Fast {
 
     public static void main(String[] args) {
 
-        In in = new In();
+        /*In in = new In();
         Out out = new Out();
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
-            points[i] = new Point(x, y);
-        /*String filename = args[0];
+            points[i] = new Point(x, y);*/
+        String filename = args[0];
         In in = new In(filename);
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
-            points[i] = new Point(x, y);*/
+            points[i] = new Point(x, y);
         }
         Fast.findPoints(points, n);
 
